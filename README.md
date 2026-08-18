@@ -1,18 +1,26 @@
+<div align="center">
+
 # Improving Complex Moiré Removal with Generative Supervision
+
+---
 
 **Xinyang Gu<sup>1</sup>, Zhilu Zhang<sup>1</sup>, Honglei Xu<sup>1</sup>, Yanting Mei<sup>1</sup>, Yukang Ding<sup>2</sup>, Wangmeng Zuo<sup>1</sup>**
 
 <sup>1</sup> Harbin Institute of Technology, Harbin, China  
 <sup>2</sup> Alibaba Group - Taobao & Tmall Group
 
-<p align="center">
-  <a href="https://xinygu-pavo.github.io/WildMoire/"><b>Project Page</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <b>arXiv: Coming Soon</b>
+<p>
+  <a href="https://xinygu-pavo.github.io/WildMoire/">
+    <img src="https://img.shields.io/badge/PROJECT%20PAGE-1f2d4d?style=for-the-badge" alt="Project Page">
+  </a>
+  <img src="https://img.shields.io/badge/PAPER%20(PDF)-4b4b4b?style=for-the-badge" alt="Paper PDF Coming Soon">
+  <img src="https://img.shields.io/badge/ARXIV-COMING%20SOON-b31b1b?style=for-the-badge" alt="arXiv Coming Soon">
 </p>
 
+</div>
+
 <p align="center">
-  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/complex_moire.jpg" width="900">
+  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/complex_moire.jpg" width="900" alt="Complex moiré examples and restoration results">
 </p>
 
 Complex moiré patterns, characterized by large-scale chromatic bands and overlapping interference, remain challenging for existing demoiréing models. Models trained only on previous datasets often leave residual artifacts and suppress image details. We address this limitation with a **generative-supervision framework** that constructs reliable paired supervision from real moiré observations. Incorporating the resulting WildMoiré supervision substantially improves complex moiré removal while better preserving the original captured content.
@@ -23,16 +31,10 @@ The availability of high-quality paired data is essential for training learning-
 
 We propose a data engine designed to improve the removal of complex moiré patterns by generating training supervision. We first collect real-world images containing complex moiré patterns and localize the corresponding screen regions. Multiple image-conditioned generative foundation models then produce candidate references, which are subjected to patch-level quality control to filter and select reliable supervision. Based on this paradigm, we construct **WildMoiré** with 6.8K moiré–GT training pairs and an independent captured test set of approximately 250 pairs. Extensive experiments on ESDNet, SDXL, and Qwen-Image-Edit show consistent improvements in complex moiré removal.
 
-## What Makes Our Approach Different?
-
-Existing paired demoiréing datasets provide reliable supervision, but collecting clean counterparts for complex real-world screen captures is difficult to scale. Our framework instead turns the complementary visual priors of multiple image-conditioned generative models into quality-controlled training supervision.
-
-Rather than relying on a single generator, we generate multiple candidate references and process them through spatial and color alignment, synchronized patch extraction, pre-filtering, and optimal GT selection. This allows locally suitable supervision to be selected while reducing residual moiré, content hallucination, and color inconsistency.
-
 ## Method Overview
 
 <p align="center">
-  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/pipeline.jpg" width="900">
+  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/pipeline.jpg" width="900" alt="WildMoiré data construction pipeline">
 </p>
 
 We first collect real screen-captured images containing complex moiré patterns and localize the corresponding display regions. Five image-conditioned generative models are then used to produce candidate GT images. To establish reliable supervision, these candidates are aligned with the input in spatial position and color, cropped into synchronized patches, and processed by pre-filtering and optimal GT selection.
@@ -56,7 +58,20 @@ The best result within each comparison block is highlighted in **bold**.
 | Qwen-Image-Edit | UHDM + DCID | 22.2314 | 0.7578 | 0.3101 | 55.3314 | 0.4276 | 4.1005 |
 | Qwen-Image-Edit | + WildMoiré | **23.9313** | **0.7851** | **0.2528** | **58.9680** | **0.4624** | **4.2982** |
 
-Adding WildMoiré consistently improves all three trainable architectures on our captured test set, demonstrating the effectiveness of the proposed generative supervision for challenging complex moiré removal.
+### Challenging Cases from UHDM and DCID
+
+The best result within each comparison block is highlighted in **bold**.
+
+| Model | Training | PSNR ↑ | SSIM ↑ | LPIPS ↓ | MUSIQ ↑ | TOPIQ ↑ | Q-Align ↑ |
+|---|---|---:|---:|---:|---:|---:|---:|
+| GPT-Image-2 | — | 16.4847 | 0.6288 | 0.3597 | **47.6108** | **0.4396** | **4.4022** |
+| Nano-Banana-2 | — | **19.5363** | **0.7320** | **0.2859** | 45.6903 | 0.4112 | 4.2289 |
+| ESDNet | UHDM + DCID | 26.5372 | 0.8722 | 0.2483 | 34.1202 | 0.3006 | 3.9790 |
+| ESDNet | + WildMoiré | **26.9181** | **0.8784** | **0.2441** | **34.9631** | **0.3109** | **4.0698** |
+| SDXL | UHDM + DCID | 26.5779 | 0.8706 | 0.2467 | 36.5014 | 0.3082 | 4.0967 |
+| SDXL | + WildMoiré | **26.8603** | **0.8746** | **0.2458** | **37.1075** | **0.3187** | **4.1343** |
+| Qwen-Image-Edit | UHDM + DCID | 26.9703 | 0.8801 | **0.2360** | 44.7053 | 0.4118 | 4.2721 |
+| Qwen-Image-Edit | + WildMoiré | **27.3071** | **0.8870** | 0.2367 | **46.8816** | **0.4174** | **4.3152** |
 
 ## Qualitative Results
 

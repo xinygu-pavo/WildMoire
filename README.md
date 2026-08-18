@@ -66,7 +66,7 @@ Our project page provides interactive comparisons on both **our captured test se
 
 ## Open-Source Release
 
-The dataset, training configurations, and source code will be publicly released. Please watch this repository for updates.
+The dataset and source code will be publicly released. Please watch this repository for updates.
 
 ## Links
 

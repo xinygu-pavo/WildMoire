@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/PAPER%20(PDF)-4b4b4b?style=for-the-badge" alt="Paper PDF">
   </a>
   <a href="https://arxiv.org/abs/2608.17883">
-    <img src="https://img.shields.io/badge/ARXIV-2608.17883-b31b1b?style=for-the-badge" alt="arXiv 2608.17883">
+    <img src="https://xinygu-pavo.github.io/WildMoire/static/images/arxiv-badge.svg" alt="arXiv 2608.17883">
   </a>
 </p>
 

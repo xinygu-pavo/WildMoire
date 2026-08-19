@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="28" role="img" aria-label="ARXIV 2608.17883">
+  <title>ARXIV 2608.17883</title>
+
+  <!-- left block -->
+  <rect x="0" y="0" width="72" height="28" fill="#4b4b4b"/>
+  <!-- right block -->
+  <rect x="72" y="0" width="110" height="28" fill="#b31b1b"/>
+
+  <!-- text -->
+  <g fill="#ffffff" text-anchor="middle" font-family="Verdana, DejaVu Sans, Arial, sans-serif" font-size="11">
+    <text x="36" y="18" font-weight="700" letter-spacing="1.2">ARXIV</text>
+    <text x="127" y="18" font-weight="700" letter-spacing="1.2">2608.17883</text>
+  </g>
+</svg>

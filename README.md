@@ -13,8 +13,12 @@
   <a href="https://xinygu-pavo.github.io/WildMoire/">
     <img src="https://img.shields.io/badge/PROJECT%20PAGE-1f2d4d?style=for-the-badge" alt="Project Page">
   </a>
-  <img src="https://img.shields.io/badge/PAPER%20(PDF)-4b4b4b?style=for-the-badge" alt="Paper PDF Coming Soon">
-  <img src="https://img.shields.io/badge/ARXIV-COMING%20SOON-b31b1b?style=for-the-badge" alt="arXiv Coming Soon">
+  <a href="https://xinygu-pavo.github.io/WildMoire/static/paper/WildMoire.pdf">
+    <img src="https://img.shields.io/badge/PAPER%20(PDF)-4b4b4b?style=for-the-badge" alt="Paper PDF">
+  </a>
+  <a href="https://arxiv.org/abs/2608.17883">
+    <img src="https://img.shields.io/badge/ARXIV-2608.17883-b31b1b?style=for-the-badge" alt="arXiv 2608.17883">
+  </a>
 </p>
 
 </div>
@@ -43,35 +47,19 @@ This offline construction pipeline yields **6,832 moiré–GT pairs at 1024×102
 
 ## Quantitative Results
 
+The better result within each comparison block is highlighted in **bold**.
+
 ### Our Captured Test Set
 
-The best result within each comparison block is highlighted in **bold**.
-
-| Model | Training | PSNR ↑ | SSIM ↑ | LPIPS ↓ | MUSIQ ↑ | TOPIQ ↑ | Q-Align ↑ |
-|---|---|---:|---:|---:|---:|---:|---:|
-| GPT-Image-2 | — | 15.1965 | 0.5265 | **0.4636** | **65.4375** | **0.5831** | 4.3665 |
-| Nano-Banana-2 | — | **16.8793** | **0.5679** | 0.4696 | 60.9621 | 0.5002 | **4.4743** |
-| ESDNet | UHDM + DCID | 21.5002 | 0.7341 | 0.3471 | 38.1971 | 0.2770 | 3.6343 |
-| ESDNet | + WildMoiré | **23.3714** | **0.7821** | **0.2614** | **44.2109** | **0.3413** | **3.9607** |
-| SDXL | UHDM + DCID | 21.9034 | 0.7522 | 0.2951 | 41.4789 | 0.3203 | 3.8128 |
-| SDXL | + WildMoiré | **23.5644** | **0.7887** | **0.2621** | **45.0712** | **0.3583** | **4.0811** |
-| Qwen-Image-Edit | UHDM + DCID | 22.2314 | 0.7578 | 0.3101 | 55.3314 | 0.4276 | 4.1005 |
-| Qwen-Image-Edit | + WildMoiré | **23.9313** | **0.7851** | **0.2528** | **58.9680** | **0.4624** | **4.2982** |
+<p align="center">
+  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/table3_main.png" width="900" alt="Quantitative results on our captured test set">
+</p>
 
 ### Challenging Cases from UHDM and DCID
 
-The best result within each comparison block is highlighted in **bold**.
-
-| Model | Training | PSNR ↑ | SSIM ↑ | LPIPS ↓ | MUSIQ ↑ | TOPIQ ↑ | Q-Align ↑ |
-|---|---|---:|---:|---:|---:|---:|---:|
-| GPT-Image-2 | — | 16.4847 | 0.6288 | 0.3597 | **47.6108** | **0.4396** | **4.4022** |
-| Nano-Banana-2 | — | **19.5363** | **0.7320** | **0.2859** | 45.6903 | 0.4112 | 4.2289 |
-| ESDNet | UHDM + DCID | 26.5372 | 0.8722 | 0.2483 | 34.1202 | 0.3006 | 3.9790 |
-| ESDNet | + WildMoiré | **26.9181** | **0.8784** | **0.2441** | **34.9631** | **0.3109** | **4.0698** |
-| SDXL | UHDM + DCID | 26.5779 | 0.8706 | 0.2467 | 36.5014 | 0.3082 | 4.0967 |
-| SDXL | + WildMoiré | **26.8603** | **0.8746** | **0.2458** | **37.1075** | **0.3187** | **4.1343** |
-| Qwen-Image-Edit | UHDM + DCID | 26.9703 | 0.8801 | **0.2360** | 44.7053 | 0.4118 | 4.2721 |
-| Qwen-Image-Edit | + WildMoiré | **27.3071** | **0.8870** | 0.2367 | **46.8816** | **0.4174** | **4.3152** |
+<p align="center">
+  <img src="https://xinygu-pavo.github.io/WildMoire/static/images/tableD_udhm_dcid.png" width="900" alt="Quantitative results on challenging cases from UHDM and DCID">
+</p>
 
 ## Qualitative Results
 
@@ -85,17 +73,19 @@ The dataset and source code will be publicly released. Please watch this reposit
 
 ## Links
 
-- **Project Page:** https://xinygu-pavo.github.io/WildMoire/
-- **arXiv:** Coming soon
+- [Project Page](https://xinygu-pavo.github.io/WildMoire/)
+- [Paper (PDF)](https://xinygu-pavo.github.io/WildMoire/static/paper/WildMoire.pdf)
+- [arXiv](https://arxiv.org/abs/2608.17883)
 
 ## Citation
 
 If you find this work useful, please consider citing:
 
 ```bibtex
-@misc{gu2026improving,
-  title  = {Improving Complex Moiré Removal with Generative Supervision},
-  author = {Xinyang Gu and Zhilu Zhang and Honglei Xu and Yanting Mei and Yukang Ding and Wangmeng Zuo},
-  year   = {2026}
+@article{gu2026improving,
+  title   = {Improving Complex Moiré Removal with Generative Supervision},
+  author  = {Xinyang Gu and Zhilu Zhang and Honglei Xu and Yanting Mei and Yukang Ding and Wangmeng Zuo},
+  journal = {arXiv preprint arXiv:2608.17883},
+  year    = {2026}
 }
 ```
